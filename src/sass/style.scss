@@ -1,5 +1,27 @@
-$bgColor:blue;
+.page {
+  height: 100vh;
+  box-sizing: border-box;
+  margin: 0.5rem;
+}
 
-h1{
-  color:$bgColor;
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+.page--left {
+  background-color: azure;
+  height: 100%;
+  width: 60%;
+  float: left;
+  padding: 0.5rem;
+}
+
+.page--right {
+  height: 100%;
+  width: 40%;
+  float: right;
+  padding: 0.5rem;
+  background-color: grey;
 }
