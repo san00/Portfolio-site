@@ -1,14 +1,18 @@
-.page {
-  height: 100vh;
-  box-sizing: border-box;
-  margin: 0.5rem;
-  background-color: orange;
-}
+@supports(display: grid) or (display:flex) {
+  .page {
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0.5rem;
+    background-color: orange;
+    display: flex;
+    flex-flow: column;
+  }
 
-*,
-*:after,
-*:before {
-  box-sizing: inherit;
+  *,
+  *:after,
+  *:before {
+    box-sizing: inherit;
+  }
 }
 
 .page--left {
@@ -25,6 +29,11 @@
   grid-area: right;
 }
 @media screen and (min-width:53.1rem) {
+  .page {
+    display: flex;
+    flex-flow: row;
+  }
+
   .page--left {
     height: 100%;
     width: 60%;
