@@ -2,6 +2,7 @@
   height: 100vh;
   box-sizing: border-box;
   margin: 0.5rem;
+  background-color: orange;
 }
 
 *,
@@ -12,16 +13,14 @@
 
 .page--left {
   background-color: azure;
-  height: 100%;
-  width: 60%;
-  float: left;
+  height: 60%;
   padding: 0.5rem;
+  grid-area: left;
 }
 
 .page--right {
-  height: 100%;
-  width: 40%;
-  float: right;
+  height: 40%;
   padding: 0.5rem;
   background-color: grey;
+  grid-area: right;
 }
