@@ -13,14 +13,27 @@
 
 .page--left {
   background-color: azure;
-  height: 60%;
+  height: calc(60% - 0.5rem);
   padding: 0.5rem;
   grid-area: left;
 }
 
 .page--right {
-  height: 40%;
+  height: calc(40% - 0.5rem);
   padding: 0.5rem;
   background-color: grey;
   grid-area: right;
+}
+@media screen and (min-width:53.1rem) {
+  .page--left {
+    height: 100%;
+    width: 60%;
+    float: left;
+  }
+
+  .page--right {
+    height: 100%;
+    width: 40%;
+    float: right;
+  }
 }
