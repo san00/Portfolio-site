@@ -1,37 +1,47 @@
-@supports(display: grid) or (display:flex) {
+//Single column layout for older browsers
+
+.page {
+  height: 100vh;
+  box-sizing: border-box;
+  margin: 0.5rem;
+  background-color: orange;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+.page--left {
+  height: 60%;
+  padding: 0.5rem;
+}
+
+.page--right {
+  padding: 0.5rem;
+  height: 40%;
+}
+//Supports for newer browsers inc overrides
+@supports(display:flex) {
   .page {
-    height: 100vh;
-    box-sizing: border-box;
-    margin: 0.5rem;
-    background-color: orange;
     display: flex;
     flex-flow: column;
   }
 
-  *,
-  *:after,
-  *:before {
-    box-sizing: inherit;
+  .page--left {
+    flex: 2 1 auto;
   }
 }
-
-.page--left {
-  background-color: azure;
-  height: calc(60% - 0.5rem);
-  padding: 0.5rem;
-  grid-area: left;
+@supports(display: grid) {
+  .page {
+    display: grid;
+  }
 }
-
-.page--right {
-  height: calc(40% - 0.5rem);
-  padding: 0.5rem;
-  background-color: grey;
-  grid-area: right;
-}
+//2 column layout for older browsers
 @media screen and (min-width:53.1rem) {
   .page {
-    display: flex;
-    flex-flow: row;
+    display: flow-root;
   }
 
   .page--left {
@@ -44,5 +54,30 @@
     height: 100%;
     width: 40%;
     float: right;
+  }
+  //Supports for newer browsers inc overrides
+  @supports(display:flex) {
+    .page {
+      display: flex;
+      flex-flow: row;
+    }
+
+    .page--left {
+      flex: 2 1 auto;
+    }
+  }
+  @supports(display: grid) {
+    .page {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+    }
+
+    .page--left {
+      width: auto;
+    }
+
+    .page--right {
+      width: auto;
+    }
   }
 }

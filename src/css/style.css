@@ -1,10 +1,26 @@
-@supports (display: grid) or (display: flex) {
+.page {
+  height: 100vh;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0.5rem;
+  background-color: orange; }
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit; }
+
+.page--left {
+  height: 60%;
+  padding: 0.5rem; }
+
+.page--right {
+  padding: 0.5rem;
+  height: 40%; }
+
+@supports (display: flex) {
   .page {
-    height: 100vh;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    margin: 0.5rem;
-    background-color: orange;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -12,33 +28,18 @@
     -webkit-box-direction: normal;
     -ms-flex-flow: column;
     flex-flow: column; }
-  *,
-  *:after,
-  *:before {
-    -webkit-box-sizing: inherit;
-    box-sizing: inherit; } }
+  .page--left {
+    -webkit-box-flex: 2;
+    -ms-flex: 2 1 auto;
+    flex: 2 1 auto; } }
 
-.page--left {
-  background-color: azure;
-  height: calc(60% - 0.5rem);
-  padding: 0.5rem;
-  grid-area: left; }
-
-.page--right {
-  height: calc(40% - 0.5rem);
-  padding: 0.5rem;
-  background-color: grey;
-  grid-area: right; }
+@supports (display: grid) {
+  .page {
+    display: grid; } }
 
 @media screen and (min-width: 53.1rem) {
   .page {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-flow: row;
-    flex-flow: row; }
+    display: flow-root; }
   .page--left {
     height: 100%;
     width: 60%;
@@ -46,4 +47,25 @@
   .page--right {
     height: 100%;
     width: 40%;
-    float: right; } }
+    float: right; }
+  @supports (display: flex) {
+    .page {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+      flex-flow: row; }
+    .page--left {
+      -webkit-box-flex: 2;
+      -ms-flex: 2 1 auto;
+      flex: 2 1 auto; } }
+  @supports (display: grid) {
+    .page {
+      display: grid;
+      grid-template-columns: 2fr 1fr; }
+    .page--left {
+      width: auto; }
+    .page--right {
+      width: auto; } } }
