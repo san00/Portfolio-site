@@ -1,7 +1,10 @@
+//Single column layout for older browsers
+
 .page {
   height: 100vh;
   box-sizing: border-box;
   margin: 0.5rem;
+  background-color: orange;
 }
 
 *,
@@ -11,17 +14,70 @@
 }
 
 .page--left {
-  background-color: azure;
-  height: 100%;
-  width: 60%;
-  float: left;
+  height: 60%;
   padding: 0.5rem;
 }
 
 .page--right {
-  height: 100%;
-  width: 40%;
-  float: right;
   padding: 0.5rem;
-  background-color: grey;
+  height: 40%;
+}
+//Supports for newer browsers inc overrides
+@supports(display:flex) {
+  .page {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .page--left {
+    flex: 2 1 auto;
+  }
+}
+@supports(display: grid) {
+  .page {
+    display: grid;
+  }
+}
+//2 column layout for older browsers
+@media screen and (min-width:53.1rem) {
+  .page {
+    display: flow-root;
+  }
+
+  .page--left {
+    height: 100%;
+    width: 60%;
+    float: left;
+  }
+
+  .page--right {
+    height: 100%;
+    width: 40%;
+    float: right;
+  }
+  //Supports for newer browsers inc overrides
+  @supports(display:flex) {
+    .page {
+      display: flex;
+      flex-flow: row;
+    }
+
+    .page--left {
+      flex: 2 1 auto;
+    }
+  }
+  @supports(display: grid) {
+    .page {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+    }
+
+    .page--left {
+      width: auto;
+    }
+
+    .page--right {
+      width: auto;
+    }
+  }
 }
