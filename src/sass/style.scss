@@ -42,6 +42,20 @@ li:nth-child(1) {
   height: 40%;
   background-color: grey;
 }
+.page--left-author{
+  position: relative;
+  top: 10.5rem;
+  font-size: 4rem;
+  margin: 0 0 0 2rem;
+  text-align: left;
+}
+.page--left-title{
+  font-size: 1.6rem;
+  margin: 0 0 0 2rem;;
+  text-align: left;
+  position: relative;
+  top: 11rem;
+}
 //Supports for newer browsers inc overrides
 @supports(display:flex) {
   .page {
