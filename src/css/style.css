@@ -13,11 +13,30 @@
 
 .page--left {
   height: 60%;
-  padding: 0.5rem; }
+  padding: 0.5rem;
+  background-color: azure; }
+
+ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+li {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin: 1rem; }
+
+li a {
+  text-decoration: none; }
+
+li:nth-child(1) {
+  margin-right: auto; }
 
 .page--right {
   padding: 0.5rem;
-  height: 40%; }
+  height: 40%;
+  background-color: grey; }
 
 @supports (display: flex) {
   .page {
@@ -31,7 +50,11 @@
   .page--left {
     -webkit-box-flex: 2;
     -ms-flex: 2 1 auto;
-    flex: 2 1 auto; } }
+    flex: 2 1 auto;
+    background-color: azure;
+    height: auto; }
+  .page--right {
+    height: auto; } }
 
 @supports (display: grid) {
   .page {

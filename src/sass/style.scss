@@ -5,6 +5,7 @@
   box-sizing: border-box;
   margin: 0.5rem;
   background-color: orange;
+  // flex-flow: column;
 }
 
 *,
@@ -16,11 +17,30 @@
 .page--left {
   height: 60%;
   padding: 0.5rem;
+  background-color: azure;
+}
+
+ul {
+  display: flex;
+}
+
+li {
+  display: inline-flex;
+  margin: 1rem;
+}
+
+li a {
+  text-decoration: none;
+}
+
+li:nth-child(1) {
+  margin-right: auto;
 }
 
 .page--right {
   padding: 0.5rem;
   height: 40%;
+  background-color: grey;
 }
 //Supports for newer browsers inc overrides
 @supports(display:flex) {
@@ -31,6 +51,11 @@
 
   .page--left {
     flex: 2 1 auto;
+    background-color: azure;
+    height:  auto;
+  }
+  .page--right{
+    height: auto;
   }
 }
 @supports(display: grid) {
