@@ -4,8 +4,6 @@
   height: 100vh;
   box-sizing: border-box;
   margin: 0.5rem;
-  background-color: orange;
-  // flex-flow: column;
 }
 
 *,
@@ -15,9 +13,7 @@
 }
 
 .page--left {
-  height: 60%;
   padding: 0.5rem;
-  background-color: azure;
 }
 
 ul {
@@ -37,24 +33,33 @@ li:nth-child(1) {
   margin-right: auto;
 }
 
-.page--right {
+.page--left-author {
+  position: relative;
+  top: 5rem;
+  font-size: 3.5rem;
   padding: 0.5rem;
-  height: 40%;
-  background-color: grey;
 }
-.page--left-author{
-  position: relative;
-  top: 10.5rem;
-  font-size: 4rem;
-  margin: 0 0 0 2rem;
-  text-align: left;
-}
-.page--left-title{
+
+.page--left-title {
   font-size: 1.6rem;
-  margin: 0 0 0 2rem;;
-  text-align: left;
   position: relative;
-  top: 11rem;
+  top: 2rem;
+  padding-left: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+img {
+  max-width: 100%;
+  max-height: auto;
+  display: block;
+}
+
+.page--right-text {
+  position: relative;
+  text-align: center;
+  bottom: 15rem;
+  font-size: 2rem;
+  color: white;
 }
 //Supports for newer browsers inc overrides
 @supports(display:flex) {
@@ -65,10 +70,10 @@ li:nth-child(1) {
 
   .page--left {
     flex: 2 1 auto;
-    background-color: azure;
-    height:  auto;
+    height: auto;
   }
-  .page--right{
+
+  .page--right {
     height: auto;
   }
 }
@@ -102,13 +107,13 @@ li:nth-child(1) {
     }
 
     .page--left {
-      flex: 2 1 auto;
+      flex: 1 1 auto;
     }
   }
   @supports(display: grid) {
     .page {
       display: grid;
-      grid-template-columns: 2fr 1fr;
+      grid-template-columns: 1fr 1fr;
     }
 
     .page--left {
