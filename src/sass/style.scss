@@ -1,8 +1,9 @@
-//Single column layout for older browsers
+//Single column layout
 
-.page {
-  height: 100vh;
+html {
+  display: flex;
   box-sizing: border-box;
+  height: 100vh;
   margin: 0.5rem;
 }
 
@@ -12,116 +13,83 @@
   box-sizing: inherit;
 }
 
-.page--left {
-  padding: 0.5rem;
-}
-
-ul {
-  display: flex;
-}
-
-li {
+.nav--list-items {
   display: inline-flex;
-  margin: 1rem;
+  margin: 0.6rem;
+  list-style-type: none;
 }
 
-li a {
-  text-decoration: none;
+.logo {
+  margin-left: auto;
 }
 
-li:nth-child(1) {
-  margin-right: auto;
+.content--main {
+  margin-bottom: 3rem;
 }
 
-.page--left-author {
-  position: relative;
-  top: 5rem;
+.content--main-author {
   font-size: 3.5rem;
+  margin: 0;
   padding: 0.5rem;
 }
 
-.page--left-title {
+.content--main-title {
   font-size: 1.6rem;
-  position: relative;
-  top: 2rem;
-  padding-left: 0.5rem;
+  margin: 0;
   padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
 }
 
-img {
+.content--aside-pic {
+  display: block;
   max-width: 100%;
   max-height: auto;
-  display: block;
 }
 
-.page--right-text {
-  position: relative;
-  text-align: center;
-  bottom: 15rem;
+.content--aside-text {
   font-size: 2rem;
+  position: relative;
+  bottom: 18rem;
+  text-align: center;
   color: white;
 }
-//Supports for newer browsers inc overrides
-@supports(display:flex) {
-  .page {
-    display: flex;
-    flex-flow: column;
-  }
-
-  .page--left {
-    flex: 2 1 auto;
-    height: auto;
-  }
-
-  .page--right {
-    height: auto;
-  }
-}
+//Support for newer browsers inc overrides
 @supports(display: grid) {
-  .page {
+  html {
     display: grid;
   }
 }
-//2 column layout for older browsers
-@media screen and (min-width:53.1rem) {
-  .page {
-    display: flow-root;
+//2 column layout
+@media screen and (min-width:46rem) {
+  .nav--list-items {
+    margin: 1rem;
   }
 
-  .page--left {
-    height: 100%;
-    width: 60%;
-    float: left;
+  .content {
+    display: flex;
+    margin-top: 2rem;
+    align-items: center;
   }
 
-  .page--right {
-    height: 100%;
-    width: 40%;
-    float: right;
+  .content--main {
+    margin-left: 2rem;
+    flex: 1;
   }
-  //Supports for newer browsers inc overrides
-  @supports(display:flex) {
-    .page {
-      display: flex;
-      flex-flow: row;
-    }
 
-    .page--left {
-      flex: 1 1 auto;
-    }
+  .content--aside {
+    flex: 1;
   }
+
+  .content--aside-pic {
+    display: block;
+    max-width: 100%;
+    max-height: auto;
+  }
+  //Support for newer browsers inc overrides
   @supports(display: grid) {
-    .page {
+    .content {
       display: grid;
       grid-template-columns: 1fr 1fr;
-    }
-
-    .page--left {
-      width: auto;
-    }
-
-    .page--right {
-      width: auto;
     }
   }
 }
