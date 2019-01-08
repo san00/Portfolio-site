@@ -3,93 +3,110 @@
 html {
   display: flex;
   box-sizing: border-box;
-  height: 100vh;
-  margin: 0.5rem;
 }
 
-*,
+* {
+  margin: 0;
+  padding: 0;
+}
+
 *:after,
 *:before {
   box-sizing: inherit;
+}
+
+.nav {
+  padding: 0.5rem;
 }
 
 .nav--list-items {
   display: inline-flex;
   margin: 0.6rem;
   list-style-type: none;
+  border-bottom: solid #f4b69c;
+  font-size: 1.1rem;
+  background:hsl(220, 12%,99%);
 }
 
-.logo {
-  margin-left: auto;
+.about {
+  padding: 0.5rem;
+  margin: auto auto auto 1rem;
 }
 
-.content--main {
-  margin-bottom: 3rem;
-}
-
-.content--main-author {
+.about--info {
   font-size: 3.5rem;
   margin: 0;
+  margin-bottom: 1rem;
   padding: 0.5rem;
+  color: hsl(0, 0%, 14%);
 }
 
-.content--main-title {
+.about--links {
   font-size: 1.6rem;
+  line-height: 1.56;
   margin: 0;
-  padding-bottom: 0.5rem;
-  padding-left: 0.5rem;
+  background: hsl(0, 0%, 98%);
+  color:hsl(0, 0%, 27%);
 }
 
-.content--aside-pic {
+.links {
+  transition: background-color 0.5s;
+}
+
+.links:hover {
+  background-color: gold;
+}
+
+.aside {
+  margin-top: 0;
+}
+
+.aside-img {
   display: block;
-  max-width: 100%;
-  max-height: auto;
-}
-
-.content--aside-text {
-  font-size: 2rem;
-  position: relative;
-  bottom: 18rem;
-  text-align: center;
-  color: white;
+  width: 100vw;
+  height: 30vh;
+  object-fit: cover;
 }
 //Support for newer browsers inc overrides
 @supports(display: grid) {
-  html {
+  .content {
     display: grid;
+    grid-template-rows: 1fr 2fr;
+  }
+
+  .about {
+    padding-top: 0;
   }
 }
 //2 column layout
 @media screen and (min-width:46rem) {
-  .nav--list-items {
-    margin: 1rem;
-  }
-
   .content {
     display: flex;
-    margin-top: 2rem;
-    align-items: center;
   }
 
-  .content--main {
-    margin-left: 2rem;
+  .about {
+    margin: auto 2rem 10rem 5rem;
+    padding-left: 1rem;
+    flex: 2;
+  }
+
+  .aside {
+    padding-top: 0;
+    padding-bottom: 0;
     flex: 1;
   }
 
-  .content--aside {
-    flex: 1;
-  }
-
-  .content--aside-pic {
+  .aside-img {
     display: block;
-    max-width: 100%;
-    max-height: auto;
+    width: 35vw;
+    height: 100vh;
+    object-fit: cover;
   }
-  //Support for newer browsers inc overrides
+  // Support for newer browsers inc overrides
   @supports(display: grid) {
-    .content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
   }
+}
 }
