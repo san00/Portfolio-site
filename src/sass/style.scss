@@ -1,3 +1,4 @@
+
 //Single column layout
 
 html {
@@ -26,6 +27,9 @@ html {
   border-bottom: solid #f4b69c;
   font-size: 1.1rem;
   background:hsl(220, 12%,99%);
+}
+.nav--list-items-links{
+  text-decoration: none;
 }
 
 .about {

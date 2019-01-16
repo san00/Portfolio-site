@@ -28,6 +28,9 @@ html {
   font-size: 1.1rem;
   background: #fcfcfd; }
 
+.nav--list-items-links {
+  text-decoration: none; }
+
 .about {
   padding: 0.5rem;
   margin: auto auto auto 1rem; }
