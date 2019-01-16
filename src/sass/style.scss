@@ -1,3 +1,4 @@
+
 //Single column layout
 
 html {
@@ -9,7 +10,7 @@ html {
   margin: 0;
   padding: 0;
 }
-
+*,
 *:after,
 *:before {
   box-sizing: inherit;
@@ -26,6 +27,9 @@ html {
   border-bottom: solid #f4b69c;
   font-size: 1.1rem;
   background:hsl(220, 12%,99%);
+}
+.nav--list-items-links{
+  text-decoration: none;
 }
 
 .about {
@@ -69,8 +73,11 @@ html {
 }
 //Support for newer browsers inc overrides
 @supports(display: grid) {
-  .content {
+  html{
     display: grid;
+  }
+
+  .content {
     grid-template-rows: 1fr 2fr;
   }
 
@@ -104,8 +111,10 @@ html {
   }
   // Support for newer browsers inc overrides
   @supports(display: grid) {
-  .content {
+  html{
     display: grid;
+  }
+    .content {
     grid-template-columns: 1fr 2fr;
   }
 }

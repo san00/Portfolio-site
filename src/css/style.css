@@ -9,6 +9,7 @@ html {
   margin: 0;
   padding: 0; }
 
+*,
 *:after,
 *:before {
   -webkit-box-sizing: inherit;
@@ -26,6 +27,9 @@ html {
   border-bottom: solid #f4b69c;
   font-size: 1.1rem;
   background: #fcfcfd; }
+
+.nav--list-items-links {
+  text-decoration: none; }
 
 .about {
   padding: 0.5rem;
@@ -63,8 +67,9 @@ html {
   object-fit: cover; }
 
 @supports (display: grid) {
+  html {
+    display: grid; }
   .content {
-    display: grid;
     grid-template-rows: 1fr 2fr; }
   .about {
     padding-top: 0; } }
@@ -93,6 +98,7 @@ html {
     -o-object-fit: cover;
     object-fit: cover; }
   @supports (display: grid) {
+    html {
+      display: grid; }
     .content {
-      display: grid;
       grid-template-columns: 1fr 2fr; } } }
