@@ -4,7 +4,8 @@ $secondary-text-colour: #3f3f3f;
 $accent-border-colour: #f4b69c;
 $hover-highlight-colour: gold;
 
-//Single column layout
+
+//Single column mobile layout
 
 html {
     box-sizing: border-box;
@@ -15,6 +16,7 @@ html {
     margin: 0;
     padding: 0;
 }
+
 *,
 *:after,
 *:before {
@@ -22,16 +24,18 @@ html {
 }
 
 .nav {
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     padding: 0.5rem;
 }
 
 .nav--list-items {
     border-bottom: solid $accent-border-colour;
     display: inline-flex;
-    font-size: 1.1rem;
+    font-size: 1.1em;
     list-style-type: none;
+    margin-bottom: 0.5rem;
 }
+
 .nav--list-items-links {
     color: $primary-text-colour;
     text-decoration: none;
@@ -44,14 +48,13 @@ html {
 
 .about--info {
     color: $primary-text-colour;
-    font-size: 3.5rem;
-    // margin-bottom: 0.5rem;
+    font-size: 3.2em;
     padding-bottom: 0;
 }
 
 .about--links {
     color: $secondary-text-colour;
-    font-size: 1.6rem;
+    font-size: 1.6em;
     line-height: 1.56;
     margin-top: 0;
     padding: 0.5rem;
@@ -75,6 +78,21 @@ html {
     object-fit: cover;
     width: 100vw;
 }
+
+//media query adjusts layout between mobile & tablet screen sizes
+@media screen and (min-width:26.1rem) and (max-width:46rem) {
+    .about {
+        margin-top: 4rem;
+        padding-left: 3rem;
+        padding-right: 1rem;
+    }
+
+    .about--info {
+        margin-bottom: 0.5rem;
+        margin-top: 1.5rem;
+    }
+}
+
 //Support for newer browsers inc overrides
 @supports(display: grid) {
     html {
@@ -89,6 +107,7 @@ html {
         padding-top: 0;
     }
 }
+
 //2 column layout
 @media screen and (min-width:46rem) {
     .content {
@@ -122,11 +141,13 @@ html {
         object-fit: cover;
         width: 35vw;
     }
+
     // Support for newer browsers inc overrides
     @supports(display: grid) {
         html {
             display: grid;
         }
+
         .content {
             grid-template-rows: 1fr 2fr;
         }
