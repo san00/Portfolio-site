@@ -35,7 +35,7 @@ gulp.task('sass', function() {
 });
 
 //deploy to github pages
-gulp.task('deploy', () => src('dist/**/*').pipe(deploy()));
+gulp.task('deploy', () => gulp.src('dist/**/*').pipe(deploy()));
 
 // -- Watch & serve tasks --
 
