@@ -4,6 +4,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
 const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
+const deploy = require('gulp-gh-pages');
 
 //  -- Top level functions --
 //  gulp.task - defines tasks
@@ -32,6 +33,9 @@ gulp.task('imagemin', () =>
 gulp.task('sass', function() {
   return gulp.src(['src/sass/*.scss']).pipe(sass().on('error', sass.logError)).pipe(autoprefixer({browsers: ['last 2 versions'], cascade: false})).pipe(gulp.dest('src/css')).pipe(browserSync.stream());
 });
+
+//deploy to github pages
+gulp.task('deploy', () => src('./dist/**/*').pipe(deploy()));
 
 // -- Watch & serve tasks --
 
