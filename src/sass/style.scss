@@ -4,152 +4,167 @@ $secondary-text-colour: #3f3f3f;
 $accent-border-colour: #f4b69c;
 $hover-highlight-colour: gold;
 
-
 //Single column mobile layout
 
 html {
-    box-sizing: border-box;
-    display: flex;
+  box-sizing: border-box;
+  display: flex;
 }
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 *,
 *:after,
 *:before {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 .nav {
-    margin-top: 1rem;
-    padding: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
 }
 
 .nav--list-items {
-    border-bottom: solid $accent-border-colour;
-    display: inline-flex;
-    font-size: 1.1em;
-    list-style-type: none;
-    margin-bottom: 0.5rem;
+  border-bottom: solid $accent-border-colour;
+  display: inline-flex;
+  font-size: 1.1em;
+  list-style-type: none;
+  margin-bottom: 0.5rem;
 }
 
 .nav--list-items-links {
-    color: $primary-text-colour;
-    text-decoration: none;
+  color: $primary-text-colour;
+  text-decoration: none;
 }
 
 .about {
-    margin-left: 1rem;
-    padding: 0.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 0.5rem;
 }
 
 .about--info {
-    color: $primary-text-colour;
-    font-size: 3.2em;
-    padding-bottom: 0;
+  color: $primary-text-colour;
+  font-size: 3.2em;
+  padding-bottom: 0;
+  padding-top: 1rem;
 }
 
 .about--links {
-    color: $secondary-text-colour;
-    font-size: 1.6em;
-    line-height: 1.56;
-    margin-top: 0;
-    padding: 0.5rem;
+  color: $secondary-text-colour;
+  font-size: 1.6em;
+  line-height: 1.5;
+  margin-top: 1rem;
 }
 
 .links {
-    transition: background-color 0.2s;
+  transition: background-color 0.2s;
 }
 
 .links:hover {
-    background-color: $hover-highlight-colour;
+  background-color: $hover-highlight-colour;
 }
 
 .aside {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .aside-img {
-    display: block;
-    height: 30vh;
-    object-fit: cover;
-    width: 100vw;
+  display: block;
+  height: 30vh;
+  object-fit: cover;
+  width: 100vw;
+}
+.footer {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 2rem;
+}
+
+.github,
+.twitter {
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-right: 1rem;
 }
 
 //media query adjusts layout between mobile & tablet screen sizes
-@media screen and (min-width:26.1rem) and (max-width:46rem) {
-    .about {
-        margin-top: 4rem;
-        padding-left: 3rem;
-        padding-right: 1rem;
-    }
+@media screen and (min-width: 26.1rem) and (max-width: 46rem) {
+  .nav--list-items {
+    margin-top: 2rem;
+  }
+  .about {
+    margin-top: 1rem;
+    padding-left: 3rem;
+    padding-right: 1rem;
+  }
 
-    .about--info {
-        margin-bottom: 0.5rem;
-        margin-top: 1.5rem;
-    }
+  .about--info {
+    margin-bottom: 0.5rem;
+    margin-top: 2rem;
+  }
 }
 
 //Support for newer browsers inc overrides
-@supports(display: grid) {
-    html {
-        display: grid;
-    }
+@supports (display: grid) {
+  html {
+    display: grid;
+  }
 
-    .content {
-        grid-template-rows: 1fr 2fr;
-    }
+  .content {
+    grid-template-rows: 1fr 2fr;
+  }
 
-    .about {
-        padding-top: 0;
-    }
+  .about {
+    padding-top: 0;
+  }
 }
 
 //2 column layout
-@media screen and (min-width:46rem) {
+@media screen and (min-width: 46rem) {
+  .content {
+    display: flex;
+  }
+
+  .about {
+    flex: 2;
+    margin: auto 2rem 12rem 8rem;
+    padding: 1rem;
+  }
+
+  .about--info {
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .about--links {
+    padding: 0;
+  }
+
+  .aside {
+    flex: 1;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+
+  .aside-img {
+    display: block;
+    height: 100vh;
+    object-fit: cover;
+    width: 35vw;
+  }
+
+  // Support for newer browsers inc overrides
+  @supports (display: grid) {
+    html {
+      display: grid;
+    }
+
     .content {
-
-        display: flex;
+      grid-template-rows: 1fr 2fr;
     }
-
-    .about {
-        flex: 2;
-        margin: auto 2rem 10rem 5rem;
-        padding-left: 1rem;
-    }
-
-    .about--info {
-        margin-bottom: 1rem;
-        margin-top: 1.5rem;
-    }
-
-    .about--links {
-        padding: 0;
-    }
-
-    .aside {
-        flex: 1;
-        padding-bottom: 0;
-        padding-top: 0;
-    }
-
-    .aside-img {
-        display: block;
-        height: 100vh;
-        object-fit: cover;
-        width: 35vw;
-    }
-
-    // Support for newer browsers inc overrides
-    @supports(display: grid) {
-        html {
-            display: grid;
-        }
-
-        .content {
-            grid-template-rows: 1fr 2fr;
-        }
-    }
+  }
+}

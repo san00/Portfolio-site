@@ -34,19 +34,20 @@ html {
 
 .about {
   margin-left: 1rem;
+  margin-right: 1rem;
   padding: 0.5rem; }
 
 .about--info {
   color: #262626;
   font-size: 3.2em;
-  padding-bottom: 0; }
+  padding-bottom: 0;
+  padding-top: 1rem; }
 
 .about--links {
   color: #3f3f3f;
   font-size: 1.6em;
-  line-height: 1.56;
-  margin-top: 0;
-  padding: 0.5rem; }
+  line-height: 1.5;
+  margin-top: 1rem; }
 
 .links {
   -webkit-transition: background-color 0.2s;
@@ -65,14 +66,31 @@ html {
   object-fit: cover;
   width: 100vw; }
 
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  margin-top: 2rem; }
+
+.github,
+.twitter {
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-right: 1rem; }
+
 @media screen and (min-width: 26.1rem) and (max-width: 46rem) {
+  .nav--list-items {
+    margin-top: 2rem; }
   .about {
-    margin-top: 4rem;
+    margin-top: 1rem;
     padding-left: 3rem;
     padding-right: 1rem; }
   .about--info {
     margin-bottom: 0.5rem;
-    margin-top: 1.5rem; } }
+    margin-top: 2rem; } }
 
 @supports (display: grid) {
   html {
@@ -91,8 +109,8 @@ html {
     -webkit-box-flex: 2;
     -ms-flex: 2;
     flex: 2;
-    margin: auto 2rem 10rem 5rem;
-    padding-left: 1rem; }
+    margin: auto 2rem 12rem 8rem;
+    padding: 1rem; }
   .about--info {
     margin-bottom: 1rem;
     margin-top: 1.5rem; }
