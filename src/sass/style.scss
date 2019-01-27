@@ -3,6 +3,8 @@ $primary-text-colour: #262626;
 $secondary-text-colour: #3f3f3f;
 $accent-border-colour: #f4b69c;
 $hover-highlight-colour: gold;
+$mrgn-top:1rem;
+$pad:0.5rem;
 
 //Single column mobile layout
 
@@ -23,8 +25,8 @@ html {
 }
 
 .nav {
-  margin-top: 1rem;
-  padding: 0.5rem;
+  margin-top: $mrgn-top;
+  padding: $pad;
 }
 
 .nav--list-items {
@@ -43,7 +45,7 @@ html {
 .about {
   margin-left: 1rem;
   margin-right: 1rem;
-  padding: 0.5rem;
+  padding: $pad;
 }
 
 .about--info {
@@ -57,7 +59,7 @@ html {
   color: $secondary-text-colour;
   font-size: 1.6em;
   line-height: 1.5;
-  margin-top: 1rem;
+  margin-top: $mrgn-top;
 }
 
 .links {
@@ -97,7 +99,7 @@ html {
     margin-top: 2rem;
   }
   .about {
-    margin-top: 1rem;
+    margin-top: $mrgn-top;
     padding-left: 3rem;
     padding-right: 1rem;
   }
