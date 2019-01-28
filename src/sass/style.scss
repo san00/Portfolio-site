@@ -3,8 +3,9 @@ $primary-text-colour: #262626;
 $secondary-text-colour: #3f3f3f;
 $accent-border-colour: #f4b69c;
 $hover-highlight-colour: gold;
-$mrgn-top:1rem;
-$pad:0.5rem;
+$sml-margin-top: 1rem;
+$pad: 0.5rem;
+$medium-margin-left:5rem;
 
 //Single column mobile layout
 
@@ -23,9 +24,11 @@ html {
 *:before {
   box-sizing: inherit;
 }
-
+.content {
+  font-size: medium;
+}
 .nav {
-  margin-top: $mrgn-top;
+  margin-top: $sml-margin-top;
   padding: $pad;
 }
 
@@ -58,8 +61,8 @@ html {
 .about--links {
   color: $secondary-text-colour;
   font-size: 1.6em;
-  line-height: 1.5;
-  margin-top: $mrgn-top;
+  line-height: 1.5em;
+  margin-top: $sml-margin-top;
 }
 
 .links {
@@ -88,25 +91,25 @@ html {
 
 .github,
 .twitter {
-  width: 2.75rem;
-  height: 2.75rem;
+  width: 2.5em;
+  height: 2.5em;
   margin-right: 1rem;
 }
 
 //media query adjusts layout between mobile & tablet screen sizes
 @media screen and (min-width: 26.1rem) and (max-width: 46rem) {
   .nav--list-items {
-    margin-top: 2rem;
+    margin-top: 3rem;
   }
   .about {
-    margin-top: $mrgn-top;
+    margin-top: $sml-margin-top;
     padding-left: 3rem;
     padding-right: 1rem;
   }
 
   .about--info {
     margin-bottom: 0.5rem;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
   }
 }
 
@@ -125,25 +128,29 @@ html {
   }
 }
 
-//2 column layout
+//2 column layout medium screens
 @media screen and (min-width: 46rem) {
   .content {
     display: flex;
   }
-
+  .nav--list-items {
+    margin-left: $medium-margin-left;
+  }
   .about {
     flex: 2;
-    margin: auto 2rem 12rem 8rem;
+    margin: auto 3rem 12rem 8rem;
     padding: 1rem;
   }
 
   .about--info {
     margin-bottom: 1rem;
     margin-top: 1.5rem;
+    margin-left: $medium-margin-left;
   }
 
   .about--links {
     padding: 0;
+    margin-left:$medium-margin-left ;
   }
 
   .aside {
@@ -157,6 +164,22 @@ html {
     height: 100vh;
     object-fit: cover;
     width: 35vw;
+  }
+  .footer {
+    margin-left: $medium-margin-left;
+  }
+
+  //2 column layout large screens
+  @media screen and (min-width: 115rem) {
+    .content {
+      font-size: large;
+    }
+    .nav--list-items,
+    .about--info,
+    .about--links,
+    .footer {
+      margin-left: 8rem;
+    }
   }
 
   // Support for newer browsers inc overrides
