@@ -5,191 +5,204 @@ $accent-border-colour: #f4b69c;
 $hover-highlight-colour: gold;
 $sml-margin-top: 1rem;
 $pad: 0.5rem;
-$medium-margin-left:5rem;
+$medium-margin-left: 5rem;
+
+// spacing scale for margins & padding
+$base-space: 1rem;
+$spacing-xxs: calc(#{$base-space} / 8); // 2px spacing
+$spacing-xs: calc(#{$base-space} / 4);// 4px spacing
+$spacing-s: calc(#{$base-space} / 2);// 8px spacing
+$spacing-m: $base-space; // 16px spacing
+$spacing-l: calc(#{$base-space} * 2); // 32px spacing
+$spacing-xl: calc(#{$base-space} * 4); // 64px spacing
+$spacing-xxl: calc(#{$base-space} * 8); // 128px spacing
+
+
 
 //Single column mobile layout
 
 html {
-  box-sizing: border-box;
-  display: flex;
+    box-sizing: border-box;
+    display: flex;
 }
 
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 *,
 *:after,
 *:before {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
 .content {
-  font-size: medium;
+    font-size: medium;
 }
+
 .nav {
-  margin-top: $sml-margin-top;
-  padding: $pad;
+    margin-top: $sml-margin-top;
+    padding: $pad;
 }
 
 .nav--list-items {
-  border-bottom: solid $accent-border-colour;
-  display: inline-flex;
-  font-size: 1.1em;
-  list-style-type: none;
-  margin-bottom: 0.5rem;
+    border-bottom: solid $accent-border-colour;
+    display: inline-flex;
+    font-size: 1.1em;
+    list-style-type: none;
+    margin-bottom: 0.5rem;
 }
 
 .nav--list-items-links {
-  color: $primary-text-colour;
-  text-decoration: none;
+    color: $primary-text-colour;
+    text-decoration: none;
 }
 
 .about {
-  margin-left: 1rem;
-  margin-right: 1rem;
-  padding: $pad;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: $pad;
 }
 
 .about--info {
-  color: $primary-text-colour;
-  font-size: 3.2em;
-  padding-bottom: 0;
-  padding-top: 1rem;
+    color: $primary-text-colour;
+    font-size: 3.2em;
+    padding-bottom: 0;
+    padding-top: 1rem;
 }
 
 .about--links {
-  color: $secondary-text-colour;
-  font-size: 1.6em;
-  line-height: 1.5em;
-  margin-top: $sml-margin-top;
+    color: $secondary-text-colour;
+    font-size: 1.6em;
+    line-height: 1.5em;
+    margin-top: $sml-margin-top;
 }
 
 .links {
-  transition: background-color 0.2s;
+    transition: background-color 0.2s;
 }
 
 .links:hover {
-  background-color: $hover-highlight-colour;
+    background-color: $hover-highlight-colour;
 }
 
 .aside {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 .aside-img {
-  display: block;
-  height: 30vh;
-  object-fit: cover;
-  width: 100vw;
+    display: block;
+    height: 30vh;
+    object-fit: cover;
+    width: 100vw;
 }
 .footer {
-  display: flex;
-  justify-content: flex-start;
-  margin-top: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 2rem;
 }
 
 .github,
 .twitter {
-  width: 2.5em;
-  height: 2.5em;
-  margin-right: 1rem;
+    height: 2.5em;
+    margin-right: 1rem;
+    width: 2.5em;
 }
 
 //media query adjusts layout between mobile & tablet screen sizes
 @media screen and (min-width: 26.1rem) and (max-width: 46rem) {
-  .nav--list-items {
-    margin-top: 3rem;
-  }
-  .about {
-    margin-top: $sml-margin-top;
-    padding-left: 3rem;
-    padding-right: 1rem;
-  }
+    .nav--list-items {
+        margin-top: 3rem;
+    }
+    .about {
+        margin-top: $sml-margin-top;
+        padding-left: 3rem;
+        padding-right: 1rem;
+    }
 
-  .about--info {
-    margin-bottom: 0.5rem;
-    margin-top: 1.5rem;
-  }
+    .about--info {
+        margin-bottom: 0.5rem;
+        margin-top: 1.5rem;
+    }
 }
 
 //Support for newer browsers inc overrides
 @supports (display: grid) {
-  html {
-    display: grid;
-  }
+    html {
+        display: grid;
+    }
 
-  .content {
-    grid-template-rows: 1fr 2fr;
-  }
+    .content {
+        grid-template-rows: 1fr 2fr;
+    }
 
-  .about {
-    padding-top: 0;
-  }
+    .about {
+        padding-top: 0;
+    }
 }
 
 //2 column layout medium screens
 @media screen and (min-width: 46rem) {
-  .content {
-    display: flex;
-  }
-  .nav--list-items {
-    margin-left: $medium-margin-left;
-  }
-  .about {
-    flex: 2;
-    margin: auto 3rem 12rem 8rem;
-    padding: 1rem;
-  }
-
-  .about--info {
-    margin-bottom: 1rem;
-    margin-top: 1.5rem;
-    margin-left: $medium-margin-left;
-  }
-
-  .about--links {
-    padding: 0;
-    margin-left:$medium-margin-left ;
-  }
-
-  .aside {
-    flex: 1;
-    padding-bottom: 0;
-    padding-top: 0;
-  }
-
-  .aside-img {
-    display: block;
-    height: 100vh;
-    object-fit: cover;
-    width: 35vw;
-  }
-  .footer {
-    margin-left: $medium-margin-left;
-  }
-
-  //2 column layout large screens
-  @media screen and (min-width: 115rem) {
     .content {
-      font-size: large;
+        display: flex;
     }
-    .nav--list-items,
-    .about--info,
-    .about--links,
+    .nav--list-items {
+        margin-left: $medium-margin-left;
+    }
+    .about {
+        flex: 2;
+        margin: auto 3rem 12rem 8rem;
+        padding: 1rem;
+    }
+
+    .about--info {
+        margin-bottom: 1rem;
+        margin-left: $medium-margin-left;
+        margin-top: 1.5rem;
+    }
+
+    .about--links {
+        margin-left: $medium-margin-left ;
+        padding: 0;
+    }
+
+    .aside {
+        flex: 1;
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+
+    .aside-img {
+        display: block;
+        height: 100vh;
+        object-fit: cover;
+        width: 35vw;
+    }
     .footer {
-      margin-left: 8rem;
-    }
-  }
-
-  // Support for newer browsers inc overrides
-  @supports (display: grid) {
-    html {
-      display: grid;
+        margin-left: $medium-margin-left;
     }
 
-    .content {
-      grid-template-rows: 1fr 2fr;
+    //2 column layout large screens
+    @media screen and (min-width: 115rem) {
+        .content {
+            font-size: large;
+        }
+        .nav--list-items,
+        .about--info,
+        .about--links,
+        .footer {
+            margin-left: 8rem;
+        }
     }
-  }
+
+    // Support for newer browsers inc overrides
+    @supports (display: grid) {
+        html {
+            display: grid;
+        }
+
+        .content {
+            grid-template-rows: 1fr 2fr;
+        }
+    }
 }
