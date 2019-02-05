@@ -114,7 +114,7 @@ html {
     -webkit-box-flex: 2;
     -ms-flex: 2;
     flex: 2;
-    margin: auto 3rem 12rem 8rem;
+    margin: auto 3rem 12rem 3rem;
     padding: 1rem; }
   .about--info {
     margin-bottom: 1rem;
