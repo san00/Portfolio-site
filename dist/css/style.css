@@ -20,7 +20,7 @@ html {
 
 .nav {
   margin-top: 1rem;
-  padding: 0.5rem; }
+  padding: calc(1rem / 2); }
 
 .nav--list-items {
   border-bottom: solid #f4b69c;
@@ -29,7 +29,7 @@ html {
   display: inline-flex;
   font-size: 1.1em;
   list-style-type: none;
-  margin-bottom: 0.5rem; }
+  margin-bottom: calc(1rem / 2); }
 
 .nav--list-items-links {
   color: #262626;
@@ -38,7 +38,7 @@ html {
 .about {
   margin-left: 1rem;
   margin-right: 1rem;
-  padding: 0.5rem; }
+  padding: calc(1rem / 2); }
 
 .about--info {
   color: #262626;
@@ -76,7 +76,7 @@ html {
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  margin-top: 2rem; }
+  margin-top: calc(1rem * 2); }
 
 .github,
 .twitter {
@@ -86,14 +86,14 @@ html {
 
 @media screen and (min-width: 26.1rem) and (max-width: 46rem) {
   .nav--list-items {
-    margin-top: 3rem; }
+    margin-top: calc(1rem * 2); }
   .about {
     margin-top: 1rem;
-    padding-left: 3rem;
+    padding-left: calc(1rem * 2);
     padding-right: 1rem; }
   .about--info {
-    margin-bottom: 0.5rem;
-    margin-top: 1.5rem; } }
+    margin-bottom: calc(1rem / 2);
+    margin-top: 1rem; } }
 
 @supports (display: grid) {
   html {
@@ -109,7 +109,7 @@ html {
     display: -ms-flexbox;
     display: flex; }
   .nav--list-items {
-    margin-left: 5rem; }
+    margin-left: calc(1rem * 4); }
   .about {
     -webkit-box-flex: 2;
     -ms-flex: 2;
@@ -118,10 +118,10 @@ html {
     padding: 1rem; }
   .about--info {
     margin-bottom: 1rem;
-    margin-left: 5rem;
-    margin-top: 1.5rem; }
+    margin-left: calc(1rem * 4);
+    margin-top: 1rem; }
   .about--links {
-    margin-left: 5rem;
+    margin-left: calc(1rem * 4);
     padding: 0; }
   .aside {
     -webkit-box-flex: 1;
@@ -136,7 +136,7 @@ html {
     object-fit: cover;
     width: 35vw; }
   .footer {
-    margin-left: 5rem; } }
+    margin-left: calc(1rem * 4); } }
 
 @media screen and (min-width: 46rem) and (min-width: 115rem) {
   .content {
@@ -145,7 +145,7 @@ html {
   .about--info,
   .about--links,
   .footer {
-    margin-left: 8rem; } }
+    margin-left: calc(1rem * 8); } }
 
 @media screen and (min-width: 46rem) {
   @supports (display: grid) {

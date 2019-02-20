@@ -3,9 +3,6 @@ $primary-text-colour: #262626;
 $secondary-text-colour: #3f3f3f;
 $accent-border-colour: #f4b69c;
 $hover-highlight-colour: gold;
-$sml-margin-top: 1rem;
-$pad: 0.5rem;
-$medium-margin-left: 5rem;
 
 // spacing scale for margins & padding
 $base-space: 1rem;
@@ -41,8 +38,8 @@ html {
 }
 
 .nav {
-    margin-top: $sml-margin-top;
-    padding: $pad;
+    margin-top: $spacing-m;
+    padding: $spacing-s;
 }
 
 .nav--list-items {
@@ -50,7 +47,7 @@ html {
     display: inline-flex;
     font-size: 1.1em;
     list-style-type: none;
-    margin-bottom: 0.5rem;
+    margin-bottom: $spacing-s;
 }
 
 .nav--list-items-links {
@@ -59,23 +56,23 @@ html {
 }
 
 .about {
-    margin-left: 1rem;
-    margin-right: 1rem;
-    padding: $pad;
+    margin-left: $spacing-m;
+    margin-right: $spacing-m;
+    padding: $spacing-s;
 }
 
 .about--info {
     color: $primary-text-colour;
     font-size: 3.2em;
     padding-bottom: 0;
-    padding-top: 1rem;
+    padding-top: $spacing-m;
 }
 
 .about--links {
     color: $secondary-text-colour;
     font-size: 1.6em;
     line-height: 1.5em;
-    margin-top: $sml-margin-top;
+    margin-top: $spacing-m;
 }
 
 .links {
@@ -99,30 +96,30 @@ html {
 .footer {
     display: flex;
     justify-content: flex-start;
-    margin-top: 2rem;
+    margin-top: $spacing-l;
 }
 
 .github,
 .twitter {
     height: 2.5em;
-    margin-right: 1rem;
+    margin-right: $spacing-m;
     width: 2.5em;
 }
 
 //media query adjusts layout between mobile & tablet screen sizes
 @media screen and (min-width: 26.1rem) and (max-width: 46rem) {
     .nav--list-items {
-        margin-top: 3rem;
+        margin-top: $spacing-l;
     }
     .about {
-        margin-top: $sml-margin-top;
-        padding-left: 3rem;
-        padding-right: 1rem;
+        margin-top: $spacing-m;
+        padding-left: $spacing-l;
+        padding-right: $spacing-m;
     }
 
     .about--info {
-        margin-bottom: 0.5rem;
-        margin-top: 1.5rem;
+        margin-bottom: $spacing-s;
+        margin-top: $spacing-m;
     }
 }
 
@@ -147,22 +144,22 @@ html {
         display: flex;
     }
     .nav--list-items {
-        margin-left: $medium-margin-left;
+        margin-left: $spacing-xl;
     }
     .about {
         flex: 2;
         margin: auto 3rem 12rem 3rem;
-        padding: 1rem;
+        padding: $spacing-m;
     }
 
     .about--info {
-        margin-bottom: 1rem;
-        margin-left: $medium-margin-left;
-        margin-top: 1.5rem;
+        margin-bottom: $spacing-m;
+        margin-left: $spacing-xl;
+        margin-top: $spacing-m;
     }
 
     .about--links {
-        margin-left: $medium-margin-left ;
+        margin-left: $spacing-xl;
         padding: 0;
     }
 
@@ -179,7 +176,7 @@ html {
         width: 35vw;
     }
     .footer {
-        margin-left: $medium-margin-left;
+        margin-left: $spacing-xl;
     }
 
     //2 column layout large screens
@@ -191,7 +188,7 @@ html {
         .about--info,
         .about--links,
         .footer {
-            margin-left: 8rem;
+            margin-left: $spacing-xxl;
         }
     }
 
