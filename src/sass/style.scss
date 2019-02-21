@@ -64,6 +64,7 @@ html {
 .about--info {
     color: $primary-text-colour;
     font-size: 3.2em;
+    font-weight: bold;
     padding-bottom: 0;
     padding-top: $spacing-m;
 }
@@ -93,16 +94,10 @@ html {
     object-fit: cover;
     width: 100vw;
 }
-.footer {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: $spacing-l;
-}
 
 .github,
 .twitter {
     height: 2.5em;
-    margin-right: $spacing-m;
     width: 2.5em;
 }
 
@@ -113,7 +108,6 @@ html {
     }
     .about {
         margin-top: $spacing-m;
-        padding-left: $spacing-l;
         padding-right: $spacing-m;
     }
 
@@ -143,24 +137,14 @@ html {
     .content {
         display: flex;
     }
-    .nav--list-items {
-        margin-left: $spacing-xl;
-    }
+    
     .about {
         flex: 2;
         margin: auto 3rem 12rem 3rem;
-        padding: $spacing-m;
     }
 
     .about--info {
-        margin-bottom: $spacing-m;
-        margin-left: $spacing-xl;
-        margin-top: $spacing-m;
-    }
-
-    .about--links {
-        margin-left: $spacing-xl;
-        padding: 0;
+        margin-bottom: $spacing-m; 
     }
 
     .aside {
@@ -175,11 +159,8 @@ html {
         object-fit: cover;
         width: 35vw;
     }
-    .footer {
-        margin-left: $spacing-xl;
-    }
 
-    //2 column layout large screens
+    // 2 column layout large screens
     @media screen and (min-width: 115rem) {
         .content {
             font-size: large;
