@@ -37,22 +37,11 @@ html {
     font-size: medium;
 }
 
-.nav {
-    margin-top: $spacing-m;
-    padding: $spacing-s;
-}
-
-.nav--list-items {
+.info {
     border-bottom: solid $accent-border-colour;
-    display: inline-flex;
-    font-size: 1.1em;
-    list-style-type: none;
-    margin-bottom: $spacing-s;
-}
-
-.nav--list-items-links {
     color: $primary-text-colour;
-    text-decoration: none;
+    font-size: 1.1em;
+    margin-bottom: $spacing-s;
 }
 
 .about {
@@ -137,14 +126,14 @@ html {
     .content {
         display: flex;
     }
-    
+
     .about {
         flex: 2;
         margin: auto 3rem 12rem 3rem;
     }
 
     .about--info {
-        margin-bottom: $spacing-m; 
+        margin-bottom: $spacing-m;
     }
 
     .aside {

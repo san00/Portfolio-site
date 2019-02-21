@@ -18,22 +18,11 @@ html {
 .content {
   font-size: medium; }
 
-.nav {
-  margin-top: 1rem;
-  padding: calc(1rem / 2); }
-
-.nav--list-items {
+.info {
   border-bottom: solid #f4b69c;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-size: 1.1em;
-  list-style-type: none;
-  margin-bottom: calc(1rem / 2); }
-
-.nav--list-items-links {
   color: #262626;
-  text-decoration: none; }
+  font-size: 1.1em;
+  margin-bottom: calc(1rem / 2); }
 
 .about {
   margin-left: 1rem;
