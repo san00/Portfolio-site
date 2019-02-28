@@ -15,7 +15,6 @@ $spacing-xl: calc(#{$base-space} * 4); // 64px spacing
 $spacing-xxl: calc(#{$base-space} * 8); // 128px spacing
 
 
-
 //Single column mobile layout
 
 html {
@@ -41,7 +40,7 @@ html {
     border-bottom: solid $accent-border-colour;
     color: $primary-text-colour;
     font-size: 1.1em;
-    margin-bottom: $spacing-s;
+    margin-bottom: $spacing-m;
 }
 
 .about {
@@ -55,14 +54,13 @@ html {
     font-size: 3.2em;
     font-weight: bold;
     padding-bottom: 0;
-    padding-top: $spacing-m;
 }
 
 .about--links {
     color: $secondary-text-colour;
     font-size: 1.6em;
     line-height: 1.5em;
-    margin-top: $spacing-m;
+    margin-bottom: $spacing-m;
 }
 
 .links {
@@ -73,13 +71,10 @@ html {
     background-color: $hover-highlight-colour;
 }
 
-.aside {
-    margin-top: 0;
-}
-
 .aside-img {
     display: block;
     height: 30vh;
+    margin-bottom: $spacing-s;
     object-fit: cover;
     width: 100vw;
 }
@@ -90,19 +85,17 @@ html {
     width: 2.5em;
 }
 
-//media query adjusts layout between mobile & tablet screen sizes
+// Adjusts layout between mobile & tablet screen sizes
 @media screen and (min-width: 26.1rem) and (max-width: 46rem) {
-    .nav--list-items {
-        margin-top: $spacing-l;
-    }
-    .about {
-        margin-top: $spacing-m;
-        padding-right: $spacing-m;
+    .aside-img {
+        margin-bottom: $spacing-xl;
     }
 
     .about--info {
-        margin-bottom: $spacing-s;
-        margin-top: $spacing-m;
+        margin-bottom: $spacing-m;
+    }
+    .about--links {
+        margin-bottom: $spacing-l;
     }
 }
 
@@ -129,17 +122,18 @@ html {
 
     .about {
         flex: 2;
-        margin: auto 3rem 12rem 3rem;
+        margin: auto 3rem 8rem 3rem;
     }
 
     .about--info {
         margin-bottom: $spacing-m;
     }
+    .about--links {
+        margin-bottom: $spacing-xl;
+    }
 
     .aside {
         flex: 1;
-        padding-bottom: 0;
-        padding-top: 0;
     }
 
     .aside-img {
@@ -149,16 +143,10 @@ html {
         width: 35vw;
     }
 
-    // 2 column layout large screens
+    // 2 column large screens
     @media screen and (min-width: 115rem) {
         .content {
             font-size: large;
-        }
-        .nav--list-items,
-        .about--info,
-        .about--links,
-        .footer {
-            margin-left: $spacing-xxl;
         }
     }
 
