@@ -3,7 +3,8 @@ html {
   box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  font-family: "Noto Serif JP", serif; }
 
 * {
   margin: 0;
@@ -22,18 +23,16 @@ html {
   border-bottom: solid #f4b69c;
   color: #262626;
   font-size: 1.1em;
-  margin-bottom: 1rem; }
+  margin-bottom: calc(1rem / 2); }
 
 .about {
   margin-left: 1rem;
-  margin-right: 1rem;
-  padding: calc(1rem / 2); }
+  margin-right: 1rem; }
 
 .about--info {
   color: #262626;
   font-size: 3.2em;
-  font-weight: bold;
-  padding-bottom: 0; }
+  font-weight: bold; }
 
 .about--links {
   color: #3f3f3f;
@@ -42,6 +41,7 @@ html {
   margin-bottom: 1rem; }
 
 .links {
+  color: #cf2691;
   -webkit-transition: background-color 0.2s;
   transition: background-color 0.2s; }
 
@@ -50,7 +50,7 @@ html {
 
 .aside-img {
   display: block;
-  height: 30vh;
+  height: 25vh;
   margin-bottom: calc(1rem / 2);
   -o-object-fit: cover;
   object-fit: cover;
@@ -58,8 +58,17 @@ html {
 
 .github,
 .twitter {
-  height: 2.5em;
-  width: 2.5em; }
+  height: 2.25em;
+  width: 2.25em; }
+
+.twitter {
+  fill: #1da1f2; }
+
+.twitter:hover {
+  fill: lightblue; }
+
+.github:hover {
+  fill: #cf2691; }
 
 @media screen and (min-width: 26.1rem) and (max-width: 46rem) {
   .aside-img {
@@ -86,11 +95,20 @@ html {
     -webkit-box-flex: 2;
     -ms-flex: 2;
     flex: 2;
-    margin: auto 3rem 8rem 3rem; }
+    margin: auto 2rem 8rem 4rem; }
   .about--info {
     margin-bottom: 1rem; }
   .about--links {
     margin-bottom: calc(1rem * 4); }
+  .icons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .link-text {
+    margin-right: 1rem; }
   .aside {
     -webkit-box-flex: 1;
     -ms-flex: 1;
@@ -104,7 +122,10 @@ html {
 
 @media screen and (min-width: 46rem) and (min-width: 115rem) {
   .content {
-    font-size: large; } }
+    font-size: large; }
+  .about--info,
+  .about--links {
+    padding-left: calc(1rem * 8); } }
 
 @media screen and (min-width: 46rem) {
   @supports (display: grid) {

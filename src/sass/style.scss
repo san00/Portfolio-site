@@ -3,6 +3,7 @@ $primary-text-colour: #262626;
 $secondary-text-colour: #3f3f3f;
 $accent-border-colour: #f4b69c;
 $hover-highlight-colour: gold;
+$info-links-colour: #cf2691;
 
 // spacing scale for margins & padding
 $base-space: 1rem;
@@ -20,6 +21,7 @@ $spacing-xxl: calc(#{$base-space} * 8); // 128px spacing
 html {
     box-sizing: border-box;
     display: flex;
+    font-family: "Noto Serif JP", serif;
 }
 
 * {
@@ -40,20 +42,18 @@ html {
     border-bottom: solid $accent-border-colour;
     color: $primary-text-colour;
     font-size: 1.1em;
-    margin-bottom: $spacing-m;
+    margin-bottom: $spacing-s;
 }
 
 .about {
     margin-left: $spacing-m;
     margin-right: $spacing-m;
-    padding: $spacing-s;
 }
 
 .about--info {
     color: $primary-text-colour;
     font-size: 3.2em;
     font-weight: bold;
-    padding-bottom: 0;
 }
 
 .about--links {
@@ -64,6 +64,7 @@ html {
 }
 
 .links {
+    color: $info-links-colour;
     transition: background-color 0.2s;
 }
 
@@ -73,7 +74,7 @@ html {
 
 .aside-img {
     display: block;
-    height: 30vh;
+    height: 25vh;
     margin-bottom: $spacing-s;
     object-fit: cover;
     width: 100vw;
@@ -81,10 +82,18 @@ html {
 
 .github,
 .twitter {
-    height: 2.5em;
-    width: 2.5em;
+    height: 2.25em;
+    width: 2.25em;
 }
-
+.twitter {
+    fill: #1da1f2;
+}
+.twitter:hover {
+    fill: lightblue;
+}
+.github:hover {
+    fill: $info-links-colour;
+}
 // Adjusts layout between mobile & tablet screen sizes
 @media screen and (min-width: 26.1rem) and (max-width: 46rem) {
     .aside-img {
@@ -122,7 +131,7 @@ html {
 
     .about {
         flex: 2;
-        margin: auto 3rem 8rem 3rem;
+        margin: auto 2rem 8rem 4rem;
     }
 
     .about--info {
@@ -131,7 +140,13 @@ html {
     .about--links {
         margin-bottom: $spacing-xl;
     }
-
+    .icons {
+        display: flex;
+        justify-content: center;
+    }
+    .link-text {
+        margin-right: $spacing-m;
+    }
     .aside {
         flex: 1;
     }
@@ -147,6 +162,10 @@ html {
     @media screen and (min-width: 115rem) {
         .content {
             font-size: large;
+        }
+        .about--info,
+        .about--links {
+            padding-left: $spacing-xxl;
         }
     }
 
