@@ -18,31 +18,21 @@ html {
 .content {
   font-size: medium; }
 
-.nav {
-  margin-top: 1rem;
-  padding: 0.5rem; }
-
-.nav--list-items {
+.info {
   border-bottom: solid #f4b69c;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-size: 1.1em;
-  list-style-type: none;
-  margin-bottom: 0.5rem; }
-
-.nav--list-items-links {
   color: #262626;
-  text-decoration: none; }
+  font-size: 1.1em;
+  margin-bottom: calc(1rem / 2); }
 
 .about {
   margin-left: 1rem;
   margin-right: 1rem;
-  padding: 0.5rem; }
+  padding: calc(1rem / 2); }
 
 .about--info {
   color: #262626;
   font-size: 3.2em;
+  font-weight: bold;
   padding-bottom: 0;
   padding-top: 1rem; }
 
@@ -69,31 +59,20 @@ html {
   object-fit: cover;
   width: 100vw; }
 
-.footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  margin-top: 2rem; }
-
 .github,
 .twitter {
   height: 2.5em;
-  margin-right: 1rem;
   width: 2.5em; }
 
 @media screen and (min-width: 26.1rem) and (max-width: 46rem) {
   .nav--list-items {
-    margin-top: 3rem; }
+    margin-top: calc(1rem * 2); }
   .about {
     margin-top: 1rem;
-    padding-left: 3rem;
     padding-right: 1rem; }
   .about--info {
-    margin-bottom: 0.5rem;
-    margin-top: 1.5rem; } }
+    margin-bottom: calc(1rem / 2);
+    margin-top: 1rem; } }
 
 @supports (display: grid) {
   html {
@@ -108,21 +87,13 @@ html {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
-  .nav--list-items {
-    margin-left: 5rem; }
   .about {
     -webkit-box-flex: 2;
     -ms-flex: 2;
     flex: 2;
-    margin: auto 3rem 12rem 3rem;
-    padding: 1rem; }
+    margin: auto 3rem 12rem 3rem; }
   .about--info {
-    margin-bottom: 1rem;
-    margin-left: 5rem;
-    margin-top: 1.5rem; }
-  .about--links {
-    margin-left: 5rem;
-    padding: 0; }
+    margin-bottom: 1rem; }
   .aside {
     -webkit-box-flex: 1;
     -ms-flex: 1;
@@ -134,9 +105,7 @@ html {
     height: 100vh;
     -o-object-fit: cover;
     object-fit: cover;
-    width: 35vw; }
-  .footer {
-    margin-left: 5rem; } }
+    width: 35vw; } }
 
 @media screen and (min-width: 46rem) and (min-width: 115rem) {
   .content {
@@ -145,7 +114,7 @@ html {
   .about--info,
   .about--links,
   .footer {
-    margin-left: 8rem; } }
+    margin-left: calc(1rem * 8); } }
 
 @media screen and (min-width: 46rem) {
   @supports (display: grid) {
