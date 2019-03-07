@@ -3,6 +3,7 @@ $primary-text-colour: #262626;
 $secondary-text-colour: #3f3f3f;
 $accent-border-colour: #f4b69c;
 $hover-highlight-colour: gold;
+$info-links-colour: #cf2691;
 
 // spacing scale for margins & padding
 $base-space: 1rem;
@@ -15,12 +16,12 @@ $spacing-xl: calc(#{$base-space} * 4); // 64px spacing
 $spacing-xxl: calc(#{$base-space} * 8); // 128px spacing
 
 
-
 //Single column mobile layout
 
 html {
     box-sizing: border-box;
     display: flex;
+    font-family: "Noto Serif JP", serif;
 }
 
 * {
@@ -33,39 +34,37 @@ html {
 *:before {
     box-sizing: inherit;
 }
-.content {
-    font-size: medium;
-}
 
 .info {
     border-bottom: solid $accent-border-colour;
     color: $primary-text-colour;
     font-size: 1.1em;
-    margin-bottom: $spacing-s;
+    margin-bottom: $spacing-l;
+    width: 3.5rem;
 }
 
 .about {
     margin-left: $spacing-m;
     margin-right: $spacing-m;
-    padding: $spacing-s;
 }
 
 .about--info {
     color: $primary-text-colour;
     font-size: 3.2em;
     font-weight: bold;
-    padding-bottom: 0;
-    padding-top: $spacing-m;
+    line-height: 1.11em;
+    margin-bottom: $spacing-m;
 }
 
 .about--links {
     color: $secondary-text-colour;
     font-size: 1.6em;
     line-height: 1.5em;
-    margin-top: $spacing-m;
+    margin-bottom: $spacing-l;
 }
 
 .links {
+    color: $info-links-colour;
     transition: background-color 0.2s;
 }
 
@@ -73,36 +72,52 @@ html {
     background-color: $hover-highlight-colour;
 }
 
-.aside {
-    margin-top: 0;
-}
-
 .aside-img {
     display: block;
-    height: 30vh;
+    height: 25vh;
+    margin-bottom: $spacing-s;
     object-fit: cover;
     width: 100vw;
 }
-
+.icons {
+    visibility: hidden;
+}
 .github,
 .twitter {
-    height: 2.5em;
-    width: 2.5em;
+    height: 2.25em;
+    visibility: hidden;
+    width: 2.25em;
 }
-
-//media query adjusts layout between mobile & tablet screen sizes
+.twitter {
+    fill: #1da1f2;
+}
+.twitter:hover {
+    fill: lightblue;
+}
+.github:hover {
+    fill: darkgrey;
+}
+// Adjusts layout between mobile & tablet screen sizes
 @media screen and (min-width: 26.1rem) and (max-width: 46rem) {
-    .nav--list-items {
-        margin-top: $spacing-l;
+    .aside-img {
+        margin-bottom: $spacing-xl;
     }
-    .about {
-        margin-top: $spacing-m;
-        padding-right: $spacing-m;
+    .info {
+        margin-bottom: $spacing-xl;
     }
-
     .about--info {
-        margin-bottom: $spacing-s;
-        margin-top: $spacing-m;
+        margin-bottom: $spacing-m;
+    }
+    .about--links {
+        margin-bottom: $spacing-l;
+    }
+    .icons,
+    .github,
+    .twitter {
+        visibility: visible;
+    }
+    .github {
+        margin-left: $spacing-m;
     }
 }
 
@@ -129,36 +144,57 @@ html {
 
     .about {
         flex: 2;
-        margin: auto 3rem 12rem 3rem;
+        margin: auto 2rem 7rem 5rem;
     }
 
     .about--info {
         margin-bottom: $spacing-m;
     }
+    .about--links {
+        margin-bottom: $spacing-xl;
+    }
+    .icons {
+        display: flex;
+        justify-content: center;
+        margin-right: $spacing-xl;
+    }
+    .icons,
+    .github,
+    .twitter {
+        visibility: visible;
+    }
+
+    .github {
+        margin-left: $spacing-m;
+    }
 
     .aside {
         flex: 1;
-        padding-bottom: 0;
-        padding-top: 0;
     }
 
     .aside-img {
         display: block;
         height: 100vh;
+        margin-bottom: 0;
         object-fit: cover;
         width: 35vw;
     }
 
-    // 2 column layout large screens
+    // 2 column large screens
     @media screen and (min-width: 115rem) {
         .content {
             font-size: large;
         }
-        .nav--list-items,
+        .icons {
+            display: flex;
+            justify-content: center;
+        }
+        .github {
+            margin-left: $spacing-m;
+        }
         .about--info,
-        .about--links,
-        .footer {
-            margin-left: $spacing-xxl;
+        .about--links {
+            padding-left: $spacing-xl;
         }
     }
 
