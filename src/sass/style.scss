@@ -34,15 +34,13 @@ html {
 *:before {
     box-sizing: inherit;
 }
-.content {
-    font-size: medium;
-}
 
 .info {
     border-bottom: solid $accent-border-colour;
     color: $primary-text-colour;
     font-size: 1.1em;
-    margin-bottom: $spacing-s;
+    margin-bottom: $spacing-l;
+    width: 3.5rem;
 }
 
 .about {
@@ -54,13 +52,15 @@ html {
     color: $primary-text-colour;
     font-size: 3.2em;
     font-weight: bold;
+    line-height: 1.11em;
+    margin-bottom: $spacing-m;
 }
 
 .about--links {
     color: $secondary-text-colour;
     font-size: 1.6em;
     line-height: 1.5em;
-    margin-bottom: $spacing-m;
+    margin-bottom: $spacing-l;
 }
 
 .links {
@@ -79,10 +79,13 @@ html {
     object-fit: cover;
     width: 100vw;
 }
-
+.icons {
+    visibility: hidden;
+}
 .github,
 .twitter {
     height: 2.25em;
+    visibility: hidden;
     width: 2.25em;
 }
 .twitter {
@@ -92,19 +95,29 @@ html {
     fill: lightblue;
 }
 .github:hover {
-    fill: $info-links-colour;
+    fill: darkgrey;
 }
 // Adjusts layout between mobile & tablet screen sizes
 @media screen and (min-width: 26.1rem) and (max-width: 46rem) {
     .aside-img {
         margin-bottom: $spacing-xl;
     }
-
+    .info {
+        margin-bottom: $spacing-xl;
+    }
     .about--info {
         margin-bottom: $spacing-m;
     }
     .about--links {
         margin-bottom: $spacing-l;
+    }
+    .icons,
+    .github,
+    .twitter {
+        visibility: visible;
+    }
+    .github {
+        margin-left: $spacing-m;
     }
 }
 
@@ -131,7 +144,7 @@ html {
 
     .about {
         flex: 2;
-        margin: auto 2rem 8rem 4rem;
+        margin: auto 2rem 7rem 5rem;
     }
 
     .about--info {
@@ -143,10 +156,18 @@ html {
     .icons {
         display: flex;
         justify-content: center;
+        margin-right: $spacing-xl;
     }
-    .link-text {
-        margin-right: $spacing-m;
+    .icons,
+    .github,
+    .twitter {
+        visibility: visible;
     }
+
+    .github {
+        margin-left: $spacing-m;
+    }
+
     .aside {
         flex: 1;
     }
@@ -154,6 +175,7 @@ html {
     .aside-img {
         display: block;
         height: 100vh;
+        margin-bottom: 0;
         object-fit: cover;
         width: 35vw;
     }
@@ -163,9 +185,16 @@ html {
         .content {
             font-size: large;
         }
+        .icons {
+            display: flex;
+            justify-content: center;
+        }
+        .github {
+            margin-left: $spacing-m;
+        }
         .about--info,
         .about--links {
-            padding-left: $spacing-xxl;
+            padding-left: $spacing-xl;
         }
     }
 
