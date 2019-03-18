@@ -3,7 +3,7 @@ $primary-text-colour: #262626;
 $secondary-text-colour: #3f3f3f;
 $accent-border-colour: #f4b69c;
 $hover-highlight-colour: gold;
-$info-links-colour: #cf2691;
+$about_links-colour: #cf2691;
 
 // spacing scale for margins & padding
 $base-space: 1rem;
@@ -35,7 +35,12 @@ html {
     box-sizing: inherit;
 }
 
-.info {
+.about {
+    margin-left: $spacing-m;
+    margin-right: $spacing-m;
+}
+
+.about_title {
     border-bottom: solid $accent-border-colour;
     color: $primary-text-colour;
     font-size: 1.1em;
@@ -43,12 +48,7 @@ html {
     width: 3.5rem;
 }
 
-.about {
-    margin-left: $spacing-m;
-    margin-right: $spacing-m;
-}
-
-.about--info {
+.about_header {
     color: $primary-text-colour;
     font-size: 3.2em;
     font-weight: bold;
@@ -56,67 +56,74 @@ html {
     margin-bottom: $spacing-m;
 }
 
-.about--links {
+.about_info {
     color: $secondary-text-colour;
     font-size: 1.6em;
     line-height: 1.5em;
     margin-bottom: $spacing-l;
 }
 
-.links {
-    color: $info-links-colour;
+.about_links {
+    color: $about_links-colour;
     transition: background-color 0.2s;
 }
 
-.links:hover {
+.about_links:hover {
     background-color: $hover-highlight-colour;
 }
 
-.aside-img {
+.aside_img {
     display: block;
     height: 25vh;
     margin-bottom: $spacing-s;
     object-fit: cover;
     width: 100vw;
 }
+
 .icons {
     visibility: hidden;
 }
-.github,
-.twitter {
+
+.icons_github,
+.icons_twitter {
     height: 2.25em;
     visibility: hidden;
     width: 2.25em;
 }
-.twitter {
+
+.icons_twitter {
     fill: #1da1f2;
 }
-.twitter:hover {
+
+.icons_twitter:hover {
     fill: lightblue;
 }
-.github:hover {
+
+.icons_github:hover {
     fill: darkgrey;
 }
+
 // Adjusts layout between mobile & tablet screen sizes
 @media screen and (min-width: 26.1rem) and (max-width: 46rem) {
-    .aside-img {
+    .aside_img {
         margin-bottom: $spacing-xl;
     }
-    .info {
-        margin-bottom: $spacing-xl;
-    }
-    .about--info {
+
+    .about_header {
         margin-bottom: $spacing-m;
     }
-    .about--links {
+
+    .about_info {
         margin-bottom: $spacing-l;
     }
+
     .icons,
-    .github,
-    .twitter {
+    .icons_github,
+    .icons_twitter {
         visibility: visible;
     }
-    .github {
+
+    .icons_github {
         margin-left: $spacing-m;
     }
 }
@@ -147,24 +154,27 @@ html {
         margin: auto 2rem 7rem 5rem;
     }
 
-    .about--info {
+    .about_header {
         margin-bottom: $spacing-m;
     }
-    .about--links {
+
+    .about_info {
         margin-bottom: $spacing-xl;
     }
+
     .icons {
         display: flex;
         justify-content: center;
         margin-right: $spacing-xl;
     }
+
     .icons,
-    .github,
-    .twitter {
+    .icons_github,
+    .icons_twitter {
         visibility: visible;
     }
 
-    .github {
+    .icons_github {
         margin-left: $spacing-m;
     }
 
@@ -172,7 +182,7 @@ html {
         flex: 1;
     }
 
-    .aside-img {
+    .aside_img {
         display: block;
         height: 100vh;
         margin-bottom: 0;
@@ -185,15 +195,18 @@ html {
         .content {
             font-size: large;
         }
+
         .icons {
             display: flex;
             justify-content: center;
         }
-        .github {
+
+        .icons_github {
             margin-left: $spacing-m;
         }
-        .about--info,
-        .about--links {
+
+        .about_header,
+        .about_info {
             padding-left: $spacing-xl;
         }
     }
