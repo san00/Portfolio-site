@@ -1,9 +1,12 @@
-//sass varaiables
+//sass colour varaiables
 $primary-text-colour: #262626;
 $secondary-text-colour: #3f3f3f;
 $accent-border-colour: #f4b69c;
 $hover-highlight-colour: gold;
-$info-links-colour: #cf2691;
+$about-links-colour: #cf2691;
+$twitter-icon-colour: #1da1f2;
+$fill-colour-one: lightblue;
+$fill-colour-two: darkgrey;
 
 // spacing scale for margins & padding
 $base-space: 1rem;
@@ -35,7 +38,12 @@ html {
     box-sizing: inherit;
 }
 
-.info {
+.about {
+    margin-left: $spacing-m;
+    margin-right: $spacing-m;
+}
+
+.about__title {
     border-bottom: solid $accent-border-colour;
     color: $primary-text-colour;
     font-size: 1.1em;
@@ -43,12 +51,7 @@ html {
     width: 3.5rem;
 }
 
-.about {
-    margin-left: $spacing-m;
-    margin-right: $spacing-m;
-}
-
-.about--info {
+.about__header {
     color: $primary-text-colour;
     font-size: 3.2em;
     font-weight: bold;
@@ -56,67 +59,80 @@ html {
     margin-bottom: $spacing-m;
 }
 
-.about--links {
+.about__info {
     color: $secondary-text-colour;
     font-size: 1.6em;
     line-height: 1.5em;
     margin-bottom: $spacing-l;
 }
 
-.links {
-    color: $info-links-colour;
+.about__links {
+    color: $about-links-colour;
     transition: background-color 0.2s;
 }
 
-.links:hover {
+.about__links:hover {
     background-color: $hover-highlight-colour;
 }
 
-.aside-img {
+.aside__img {
     display: block;
     height: 25vh;
     margin-bottom: $spacing-s;
     object-fit: cover;
     width: 100vw;
 }
+
 .icons {
     visibility: hidden;
 }
-.github,
-.twitter {
+
+.icons__github,
+.icons__twitter {
     height: 2.25em;
     visibility: hidden;
     width: 2.25em;
 }
-.twitter {
-    fill: #1da1f2;
+
+.icons__twitter {
+    fill: $twitter-icon-colour;
 }
-.twitter:hover {
-    fill: lightblue;
+
+.icons__twitter:hover {
+    fill: $fill-colour-one;
 }
-.github:hover {
-    fill: darkgrey;
+
+.icons__github:hover {
+    fill: $fill-colour-two;
 }
-// Adjusts layout between mobile & tablet screen sizes
-@media screen and (min-width: 26.1rem) and (max-width: 46rem) {
-    .aside-img {
-        margin-bottom: $spacing-xl;
-    }
-    .info {
-        margin-bottom: $spacing-xl;
-    }
-    .about--info {
-        margin-bottom: $spacing-m;
-    }
-    .about--links {
+
+// Adds icons to single column latout on larger mobile screen sizes - 
+@media screen and (min-width: 23.4375em) {
+    .aside__img {
         margin-bottom: $spacing-l;
     }
+
+    .about__header {
+        margin-bottom: $spacing-m;
+    }
+
+    .about__info {
+        margin-bottom: $spacing-xl;
+    }
+    
+    .icons {
+        display: flex;
+        justify-content: center;
+        margin-right: $spacing-l;    
+    }
+
     .icons,
-    .github,
-    .twitter {
+    .icons__github,
+    .icons__twitter {
         visibility: visible;
     }
-    .github {
+
+    .icons__github {
         margin-left: $spacing-m;
     }
 }
@@ -137,34 +153,37 @@ html {
 }
 
 //2 column layout medium screens
-@media screen and (min-width: 46rem) {
+@media screen and (min-width: 46em) {
     .content {
         display: flex;
     }
 
     .about {
         flex: 2;
-        margin: auto 2rem 7rem 5rem;
+        margin: auto $spacing-m $spacing-xxl $spacing-xl;
     }
 
-    .about--info {
+    .about__header {
         margin-bottom: $spacing-m;
     }
-    .about--links {
+
+    .about__info {
         margin-bottom: $spacing-xl;
     }
+
     .icons {
         display: flex;
         justify-content: center;
         margin-right: $spacing-xl;
     }
+
     .icons,
-    .github,
-    .twitter {
+    .icons__github,
+    .icons__twitter {
         visibility: visible;
     }
 
-    .github {
+    .icons__github {
         margin-left: $spacing-m;
     }
 
@@ -172,7 +191,7 @@ html {
         flex: 1;
     }
 
-    .aside-img {
+    .aside__img {
         display: block;
         height: 100vh;
         margin-bottom: 0;
@@ -181,19 +200,22 @@ html {
     }
 
     // 2 column large screens
-    @media screen and (min-width: 115rem) {
+    @media screen and (min-width: 115em) {
         .content {
             font-size: large;
         }
+
         .icons {
             display: flex;
             justify-content: center;
         }
-        .github {
+
+        .icons__github {
             margin-left: $spacing-m;
         }
-        .about--info,
-        .about--links {
+
+        .about__header,
+        .about__info {
             padding-left: $spacing-xl;
         }
     }
