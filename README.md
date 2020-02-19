@@ -1,8 +1,17 @@
-# My portfolio
+# Portfolio
 
-My personal portfolio. A responsive, progressively enhanced site built with HTML and CSS.
+A responsive and progressively enhanced personal portfolio site, built and designed from scratch with HTML, Sass and Gulp.
 
-![screen shot 2019-01-29 at 21 46 22](https://user-images.githubusercontent.com/14879253/51942644-866e5d80-240f-11e9-9e4e-7389dff174d8.png)
+![Screen Shot 2020-02-19 at 17 40 02](https://user-images.githubusercontent.com/14879253/74859563-29598880-533f-11ea-97f5-52cac5a0e0b2.png)
+
 
 ## Live preview
 [See it here](https://sanportfolio.netlify.com/)
+
+## Install
+* Download or clone the repository
+* Install dependencies - `npm install`
+* Run gulp & watch for changes - `gulp or npx gulp`
+
+### License
+MIT 2019
