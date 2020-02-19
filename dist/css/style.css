@@ -65,6 +65,9 @@ html {
   visibility: hidden;
   width: 2.25em; }
 
+.icon__text {
+  font-size: 1.2em; }
+
 .icons__twitter {
   fill: #1da1f2; }
 
