@@ -65,14 +65,24 @@ html {
   visibility: hidden;
   width: 2.25em; }
 
+.icon__text {
+  font-size: 1.2em;
+  color: #cf2691; }
+
+.icon__text:hover {
+  color: #1c0d17; }
+
 .icons__twitter {
-  fill: #1da1f2; }
+  fill: #23b3e2; }
 
 .icons__twitter:hover {
-  fill: lightblue; }
+  fill: #1da1f2; }
+
+.icons__github {
+  fill: #375060; }
 
 .icons__github:hover {
-  fill: darkgrey; }
+  fill: #021f32; }
 
 @media screen and (min-width: 23.4375em) {
   .aside__img {

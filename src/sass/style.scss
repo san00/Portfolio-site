@@ -4,9 +4,13 @@ $secondary-text-colour: #3f3f3f;
 $accent-border-colour: #f4b69c;
 $hover-highlight-colour: gold;
 $about-links-colour: #cf2691;
+$icon-links-colour: #ee7ac4;
+$icon-links-hover:#1c0d17;
 $twitter-icon-colour: #1da1f2;
-$fill-colour-one: lightblue;
-$fill-colour-two: darkgrey;
+$github-icon-colour: #021f32;
+$fill-colour-one: rgb(35, 179, 226);
+$fill-colour-two: rgb(55, 80, 96);
+
 
 // spacing scale for margins & padding
 $base-space: 1rem;
@@ -94,16 +98,29 @@ html {
     width: 2.25em;
 }
 
-.icons__twitter {
-    fill: $twitter-icon-colour;
+.icon__text{
+ font-size: 1.2em;
+ color:$about-links-colour;
 }
 
-.icons__twitter:hover {
+.icon__text:hover{
+  color: $icon-links-hover;
+}
+
+.icons__twitter {
     fill: $fill-colour-one;
 }
 
-.icons__github:hover {
+.icons__twitter:hover {
+    fill: $twitter-icon-colour;
+}
+
+.icons__github{
     fill: $fill-colour-two;
+}
+
+.icons__github:hover {
+    fill: $github-icon-colour;
 }
 
 // Adds icons to single column latout on larger mobile screen sizes - 
